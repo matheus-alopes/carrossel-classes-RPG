@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -12,27 +14,46 @@ body {
 .carrossel {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 2rem;
 }
 
-.img-container-1, .img-container-2, .img-container-3, .img-container-4 {
-    width: 40rem;
-    height: 50rem;
+.carrossel .classe {
+    position: relative;
+}
+
+.carrossel .classe .img-container-1, .carrossel .classe .img-container-2, .carrossel .classe .img-container-3, .carrossel .classe .img-container-4 {
+    width: 45vw;
+    height: 90vh;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.img-container-1 {
+.carrossel .classe .img-container-1 {
     background: no-repeat center url(./images/classe-guerreiro.jpg);
     background-size: cover;
 }
 
-.titulo-classe {
+.carrossel .classe .img-container-2 {
+    background: no-repeat center url(./images/classe-arqueiro.jpg);
+    background-size: cover;
+}
+
+.carrossel .classe .img-container-3 {
+    background: no-repeat center url(./images/classe-mago.jpg);
+    background-size: cover;
+}
+
+.carrossel .classe .img-container-4 {
+    background: no-repeat center url(./images/classe-ladino.jpg);
+    background-size: cover;
+}
+
+.carrossel .classe .titulo-classe {
     position: absolute;
-    left: 83rem;
-    top: 5.5rem;
+    left: 105%;
+    top: 0;
     font-size: 5rem;
     background-color: #a78e0010;
     box-shadow: rgba(165, 149, 149, 0.295) 0px 8px 24px;
@@ -40,15 +61,17 @@ body {
     text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.descricao-classe {
+.carrossel .classe .descricao-classe {
     position: absolute;
-    left: 83rem;
-    bottom: 5.5rem;
-    width: 30rem;
-    height: 18rem;
+    left: 105%;
+    bottom: 0;
+    width: 35vw;
+    height: 35vh;
     padding: 1rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
     text-align: justify;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     background-color: rgba(255, 94, 0, 0.178);
     box-shadow: rgba(165, 149, 149, 0.295) 0px 8px 24px;
     border-radius: 0.5rem;
@@ -57,24 +80,9 @@ body {
     justify-content: space-between;
 }
 
-.img-container-2 {
-    background: no-repeat center url(./images/classe-arqueiro.jpg);
-    background-size: cover;
-}
-
-.img-container-3 {
-    background: no-repeat center url(./images/classe-mago.jpg);
-    background-size: cover;
-}
-
-.img-container-4 {
-    background: no-repeat center url(./images/classe-ladino.jpg);
-    background-size: cover;
-}
-
-#seta-esquerda, #seta-direita {
-    width: 8rem;
-    height: 8rem;
+.carrossel #seta-esquerda, .carrossel #seta-direita {
+    width: 5rem;
+    height: 5rem;
     background: none;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -83,6 +91,14 @@ body {
     transition: 0.4s ease-in-out;
     font-size: 3rem;
     text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.carrossel #seta-esquerda {
+    margin-left: 1.5rem;
+}
+
+.carrossel #seta-direita {
+    margin-right: 1.5rem;
 }
 
 .botao-desabilitado {
@@ -94,4 +110,58 @@ body {
     background-color: #808080;
     color: #a78e00;
     border-color: #ffe23cce;
+}
+
+@media screen and (max-width: 1300px) {
+    .carrossel .classe .titulo-classe {
+        font-size: 3rem;
+    }
+
+    .carrossel .classe .descricao-classe {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .carrossel .classe .descricao-classe {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .carrossel #seta-esquerda, .carrossel #seta-direita {
+        width: 3rem;
+        height: 3rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .carrossel .classe .descricao-classe {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .carrossel .classe .img-container-1, .carrossel .classe .img-container-2, .carrossel .classe .img-container-3, .carrossel .classe .img-container-4 {
+        width: 60vw;
+        height: 50vh;
+    }
+
+    .carrossel .classe .descricao-classe {
+        position: absolute;
+        left: -25%;
+        top: 105%;
+        width: 90vw;
+        height: 20vh;
+    }
+
+    .carrossel .classe .titulo-classe {
+        left: 0;
+        top: -30%;
+    }
+
+    .carrossel .classe .titulo-classe {
+        font-size: 2rem;
+    }
 }
